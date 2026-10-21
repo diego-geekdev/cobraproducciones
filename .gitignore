@@ -1,0 +1,16 @@
+# Sistema
+.DS_Store
+Thumbs.db
+
+# Editores
+.vscode/
+.idea/
+
+# Dependencias y builds
+node_modules/
+vendor/
+
+# Credenciales: nunca al repo
+.env
+*.htpasswd
+wp-config.php

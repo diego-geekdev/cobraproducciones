@@ -1,0 +1,15 @@
+---
+# Deploy de Cobra Producciones desde cPanel → Git Version Control.
+# Reemplaza cobraproduccione por tu usuario de cPanel (aparece en /home/cobraproduccione).
+# Cada bloque copia solo si la carpeta existe en el repo.
+deployment:
+  tasks:
+    # Prototipo HTML → prototipo.cobraproducciones.cl
+    # Se excluye .htaccess para no pisar la protección con clave que escribió cPanel.
+    - if [ -d prototipo ]; then /usr/bin/rsync -a --delete --exclude='.htaccess' --exclude='.htpasswd' --exclude='.well-known' prototipo/ /home/cobraproduccione/prototipo.cobraproducciones.cl/; fi
+
+    # Plugin cobra-core → WordPress del dominio principal
+    - if [ -d cobra-core ]; then /bin/mkdir -p /home/cobraproduccione/public_html/wp-content/plugins/cobra-core && /usr/bin/rsync -a --delete cobra-core/ /home/cobraproduccione/public_html/wp-content/plugins/cobra-core/; fi
+
+    # Tema → WordPress del dominio principal (desde H4)
+    - if [ -d cobra-theme ]; then /bin/mkdir -p /home/cobraproduccione/public_html/wp-content/themes/cobra && /usr/bin/rsync -a --delete cobra-theme/ /home/cobraproduccione/public_html/wp-content/themes/cobra/; fi

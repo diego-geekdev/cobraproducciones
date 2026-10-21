@@ -1,0 +1,14 @@
+# Pegar DEBAJO de las líneas que agrega cPanel al proteger la carpeta con contraseña.
+
+# Forzar HTTPS
+RewriteEngine On
+RewriteCond %{HTTPS} !=on
+RewriteRule ^ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=301]
+
+# No indexar nada del prototipo
+<IfModule mod_headers.c>
+  Header set X-Robots-Tag "noindex, nofollow, noarchive"
+</IfModule>
+
+# No listar carpetas
+Options -Indexes
