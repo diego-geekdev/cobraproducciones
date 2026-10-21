@@ -1,0 +1,38 @@
+# Publica el sitio de Cobra Producciones por FTP cada vez que haces git push a main.
+# Los datos de conexión vienen de los Secrets del repo (FTP_SERVER, FTP_USERNAME, FTP_PASSWORD).
+# La cuenta FTP "deploy" parte en la carpeta principal de la cuenta (/home/cobraproduccione),
+# por eso las rutas de destino (server-dir) son relativas a esa carpeta.
+
+name: Publicar por FTP
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:   # permite ejecutarlo a mano desde la pestaña Actions
+
+jobs:
+  prototipo:
+    name: Prototipo → prototipo.cobraproducciones.cl
+    runs-on: ubuntu-latest
+    steps:
+      - name: Descargar el repo
+        uses: actions/checkout@v4
+
+      - name: Subir la carpeta prototipo
+        uses: SamKirkland/FTP-Deploy-Action@v4.3.5
+        with:
+          server: ${{ secrets.FTP_SERVER }}
+          username: ${{ secrets.FTP_USERNAME }}
+          password: ${{ secrets.FTP_PASSWORD }}
+          protocol: ftps
+          local-dir: ./prototipo/
+          server-dir: prototipo.cobraproducciones.cl/
+          # No tocar el .htaccess del servidor: tiene las líneas de la contraseña que escribió cPanel.
+          exclude: |
+            **/.git*
+            **/.git*/**
+            **/.htaccess
+            **/.DS_Store
+
+  # Cuando existan las carpetas cobra-core/ y cobra-theme/ agregamos aquí sus pasos,
+  # con server-dir: public_html/wp-content/plugins/cobra-core/ y public_html/wp-content/themes/cobra/
