@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/estilos.css?v=2">
+<link rel="stylesheet" href="css/estilos.css?v=3">
 </head>
 <body>
 
@@ -29,6 +29,7 @@
         <li><a href="index.html#boxeadores">Boxeadores</a></li>
         <li><a href="index.html#clinicas">Clínicas</a></li>
         <li><a href="index.html#cristian">Cristián Salas</a></li>
+        <li><a href="index.html#noticias">Noticias</a></li>
         <li><a href="index.html#galeria">Galería</a></li>
         <li><a href="index.html#sponsors">Sponsors</a></li>
         <li><a href="index.html#contacto">Contacto</a></li>
@@ -56,8 +57,8 @@
       </div>
       <div>
         <a class="hero-proximo" href="#proximo">
-          <span class="num" data-dias-a="2026-12-12T21:00:00-03:00">51</span>
-          <span><small>días para la próxima velada</small><strong>Ver cartelera y entradas</strong></span>
+          <span class="num">Pronto</span>
+          <span><small>Próxima velada Cobra · fecha por anunciar</small><strong>Avísame cuando salgan las entradas</strong></span>
         </a>
       </div>
     </div>
@@ -71,20 +72,20 @@
         <span>El afiche oficial se publica aquí cuando Cobra lo lance</span>
       </div>
       <div>
-        <span class="estado estado-proximamente">Próximo evento</span>
-        <span class="estado estado-ejemplo">Fecha de ejemplo</span>
+        <span class="estado estado-proximamente">Próximamente</span>
         <h2 id="proximo-titulo">Próxima velada Cobra</h2>
-        <p class="texto-secundario" style="margin:0">Boxeo profesional en Santiago. Cartelera por anunciar.</p>
+        <p class="texto-secundario" style="margin:0">Boxeo profesional en Santiago. Fecha, recinto y cartelera por anunciar.</p>
 
-        <div class="cuenta" data-cuenta="2026-12-12T21:00:00-03:00" role="timer" aria-label="Cuenta regresiva para la próxima velada">
-          <div><strong data-d>51</strong><span>días</span></div>
-          <div><strong data-h>00</strong><span>horas</span></div>
-          <div><strong data-m>00</strong><span>min</span></div>
-          <div><strong data-s>00</strong><span>seg</span></div>
+        <div class="cuenta cuenta-espera" role="note">
+          <div><strong>–</strong><span>días</span></div>
+          <div><strong>–</strong><span>horas</span></div>
+          <div><strong>–</strong><span>min</span></div>
+          <div><strong>–</strong><span>seg</span></div>
+          <p class="cuenta-nota">Cuando Cobra publique la fecha, aquí corre una cuenta regresiva en vivo.</p>
         </div>
 
         <dl class="datos">
-          <dt>Fecha</dt><dd>Sábado 12 de diciembre, 21:00</dd>
+          <dt>Fecha</dt><dd>Por anunciar</dd>
           <dt>Lugar</dt><dd>Santiago · recinto por confirmar</dd>
           <dt>Entradas</dt><dd>A la venta pronto</dd>
         </dl>
@@ -98,7 +99,7 @@
 
         <div class="botones">
           <a class="btn btn-rojo" href="#">Avísame cuando salgan las entradas</a>
-          <a class="btn btn-borde" href="evento.html">Ver la última velada</a>
+          <a class="btn btn-borde" href="evento.html">Ver la Final Super 4</a>
         </div>
       </div>
     </div>
@@ -126,7 +127,7 @@
             <div class="cuerpo">
               <span class="estado estado-proximamente">Próximamente</span>
               <h3>Próxima velada Cobra</h3>
-              <span class="fecha">12 de diciembre · fecha de ejemplo</span>
+              <span class="fecha">Fecha por anunciar</span>
               <span class="lugar">Santiago</span>
               <span class="ver">Ver evento</span>
             </div>
@@ -136,7 +137,7 @@
 
       <div role="tabpanel" id="panel-real" aria-labelledby="tab-real">
         <div class="grilla-eventos">
-          <a class="tarjeta-evento" href="#">
+          <a class="tarjeta-evento" href="evento.html">
             <div class="afiche"><img src="img/afiche-final-super4.png" alt="Afiche de la Final Super 4 y homenaje a Martín Vargas"></div>
             <div class="cuerpo">
               <span class="estado estado-finalizado">Finalizado</span>
@@ -146,7 +147,7 @@
               <span class="ver">Resultados y fotos</span>
             </div>
           </a>
-          <a class="tarjeta-evento" href="evento.html">
+          <a class="tarjeta-evento" href="#">
             <div class="afiche"><img src="img/afiche-super4.png" alt="Afiche de Super 4"></div>
             <div class="cuerpo">
               <span class="estado estado-finalizado">Finalizado</span>
@@ -220,6 +221,11 @@
           <h3>A. Arcoverde</h3>
           <span class="apodo">Ver ficha y récord</span>
         </a>
+        <a class="tarjeta-boxeador" href="#">
+          <div class="foto"><img src="img/boxeador-3.jpg" alt="Boxeador Cobra" data-pendiente><span class="categoria">Categoría por confirmar</span></div>
+          <h3>Nombre por confirmar</h3>
+          <span class="apodo">Ver ficha y récord</span>
+        </a>
         <div class="tarjeta-boxeador tarjeta-vacia">
           <div class="foto">Cada boxeador que Cobra cargue desde el panel aparece aquí, con su propia ficha</div>
         </div>
@@ -234,7 +240,7 @@
         <h2 id="clinicas-titulo">El rendimiento también se entrena</h2>
         <p class="texto-secundario" style="margin-top:18px">Clínicas de Psicología del Deporte aplicadas al boxeo y a los deportes de combate, para gimnasios, clubes, federaciones y organizaciones deportivas.</p>
         <div class="botones" style="margin-top:28px">
-          <a class="btn btn-rojo" href="#contacto">Solicitar clínica</a>
+          <a class="btn btn-rojo" href="#solicitar-clinica">Solicitar clínica</a>
         </div>
       </div>
       <div>
@@ -277,6 +283,55 @@
         </ul>
       </div>
     </div>
+
+    <div class="contenedor">
+      <form class="formulario form-claro" id="solicitar-clinica" novalidate>
+        <div class="ancho">
+          <h3 class="form-titulo">¿Quieres una clínica en tu gimnasio, club o federación?</h3>
+          <p class="texto-secundario" style="margin:6px 0 0">Cuéntanos sobre tu organización y te enviamos una propuesta.</p>
+        </div>
+        <div class="campo"><label for="c-nombre">Nombre</label><input id="c-nombre" autocomplete="name" required><p class="error">Escribe tu nombre.</p></div>
+        <div class="campo"><label for="c-org">Organización</label><input id="c-org" autocomplete="organization" required><p class="error">Indica tu club, gimnasio u organización.</p></div>
+        <div class="campo"><label for="c-cargo">Cargo</label><input id="c-cargo" placeholder="Entrenador, presidente, coordinador…"></div>
+        <div class="campo"><label for="c-ciudad">Ciudad</label><input id="c-ciudad" autocomplete="address-level2" required><p class="error">Indica la ciudad.</p></div>
+        <div class="campo"><label for="c-correo">Correo</label><input id="c-correo" type="email" autocomplete="email" required><p class="error">Escribe un correo válido.</p></div>
+        <div class="campo"><label for="c-tel">Teléfono</label><input id="c-tel" type="tel" autocomplete="tel" placeholder="+56 9 1234 5678"></div>
+        <div class="campo"><label for="c-modalidad">Modalidad</label>
+          <select id="c-modalidad">
+            <option>Clínica grupal</option>
+            <option>Taller</option>
+            <option>Charla</option>
+            <option>Sesión especial</option>
+            <option>No lo sé todavía</option>
+          </select></div>
+        <div class="campo"><label for="c-participantes">Participantes aproximados</label><input id="c-participantes" type="number" min="1" inputmode="numeric" placeholder="20"></div>
+        <div class="campo"><label for="c-tema">Tema de interés</label>
+          <select id="c-tema" required>
+            <option value="">Elige un tema</option>
+              <option>Preparación psicológica para la competencia</option>
+              <option>Ansiedad precompetitiva</option>
+              <option>Concentración y foco</option>
+              <option>Motivación</option>
+              <option>Confianza deportiva</option>
+              <option>Manejo de la presión</option>
+              <option>Visualización</option>
+              <option>Control emocional</option>
+              <option>Rutinas precompetitivas</option>
+              <option>Fortaleza mental</option>
+              <option>Manejo de la derrota</option>
+              <option>Recuperación psicológica</option>
+              <option>Corte de peso</option>
+              <option>Alimentación consciente y ansiedad por el peso</option>
+              <option>Comunicación entrenador-deportista</option>
+              <option>Otro tema</option>
+          </select><p class="error">Elige un tema.</p></div>
+        <div class="campo"><label for="c-fecha">Fecha tentativa</label><input id="c-fecha" type="date"></div>
+        <div class="campo ancho"><label for="c-msj">Mensaje</label><textarea id="c-msj" placeholder="Objetivos, nivel de los deportistas, horarios posibles…"></textarea></div>
+        <div class="ancho"><button class="btn btn-rojo" type="submit">Solicitar clínica</button></div>
+        <div class="form-ok" role="status"><strong>Solicitud enviada.</strong> En el sitio final queda registrada en el panel de Cobra y llega un aviso por correo.</div>
+        <p class="nota-form">Prototipo: el formulario valida los campos pero no envía datos.</p>
+      </form>
+    </div>
   </section>
 
   <!-- CRISTIÁN -->
@@ -289,6 +344,39 @@
         <div class="roles"><span>Exboxeador profesional</span><span>Psicólogo del deporte</span><span>Comentarista</span><span>Promotor</span></div>
         <p>Su experiencia dentro del ring, su comprensión de la mente del deportista y su visión del boxeo desde la competencia, la comunicación y la promoción respaldan el trabajo de Cobra Producciones.</p>
         <a class="btn btn-borde" href="#">Conoce a Cristián</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- NOTICIAS -->
+  <section class="seccion" id="noticias" aria-labelledby="noticias-titulo">
+    <div class="contenedor">
+      <div class="seccion-cabeza">
+        <div>
+          <h2 id="noticias-titulo">Noticias y prensa</h2>
+          <p>Carteleras, resultados, pesajes, entrevistas y comunicados oficiales.</p>
+        </div>
+        <span class="estado estado-ejemplo">Contenido de ejemplo</span>
+      </div>
+      <div class="grilla-noticias">
+        <a class="noticia" href="#">
+          <div class="noticia-foto"><img src="img/galeria-3.jpg" alt="" loading="lazy"></div>
+          <div class="noticia-meta"><span class="categoria-noticia">Eventos</span><time datetime="2025-10-05">5 oct 2025</time></div>
+          <h3>Final Super 4: así se vivió la noche en el Teatro La Cúpula</h3>
+          <p>Título de Campeón de Chile en juego y homenaje a Martín Vargas.</p>
+        </a>
+        <a class="noticia" href="#">
+          <div class="noticia-foto"><img src="img/galeria-5.jpg" alt="" loading="lazy"></div>
+          <div class="noticia-meta"><span class="categoria-noticia">Prensa</span><time datetime="2025-09-20">20 sep 2025</time></div>
+          <h3>Muhammad Ali Jr., invitado de honor de la Final Super 4</h3>
+          <p>El hijo de la leyenda acompañó la velada organizada por Cobra.</p>
+        </a>
+        <a class="noticia" href="#">
+          <div class="noticia-foto"><img src="img/galeria-1.jpg" alt="" loading="lazy"></div>
+          <div class="noticia-meta"><span class="categoria-noticia">Clínicas</span><time datetime="2025-08-12">12 ago 2025</time></div>
+          <h3>El rendimiento también se entrena: clínicas para clubes y gimnasios</h3>
+          <p>Cómo solicitar una clínica de Psicología del Deporte con Cobra.</p>
+        </a>
       </div>
     </div>
   </section>
@@ -330,14 +418,19 @@
         <div class="beneficio"><strong>Transmisiones</strong><span>Placas, menciones e integración en la emisión.</span></div>
         <div class="beneficio"><strong>Por combate</strong><span>Asocia tu marca a una pelea o segmento destacado.</span></div>
       </div>
-      <p class="texto-secundario" style="margin:0 0 16px">Marcas que han acompañado a Cobra</p>
+      <p class="texto-secundario" style="margin:0 0 16px">Marcas que han acompañado a Cobra <span class="estado estado-ejemplo" style="margin-left:8px">Lista y logos por confirmar</span></p>
       <div class="sponsors">
         <div class="sponsor">Kinedlife</div>
         <div class="sponsor">Orangu Sport</div>
         <div class="sponsor">RPM Chile</div>
         <div class="sponsor">Pincheira Taller de Impresión</div>
+        <div class="sponsor">Agrosan</div>
+        <div class="sponsor">Transportes Pierattini</div>
         <div class="sponsor">Olymphus</div>
         <div class="sponsor">Everlast</div>
+        <div class="sponsor">Crest</div>
+        <div class="sponsor">100% Deportes</div>
+        <div class="sponsor">Smile</div>
       </div>
     </div>
   </section>
@@ -395,6 +488,7 @@
         <li><a href="index.html#eventos">Eventos</a></li>
         <li><a href="index.html#boxeadores">Boxeadores</a></li>
         <li><a href="index.html#clinicas">Clínicas</a></li>
+        <li><a href="index.html#noticias">Noticias</a></li>
         <li><a href="index.html#sponsors">Sponsors</a></li>
         <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
@@ -432,6 +526,6 @@
   <p class="contador"></p>
 </div>
 
-<script src="js/sitio.js?v=2"></script>
+<script src="js/sitio.js?v=3"></script>
 </body>
 </html>

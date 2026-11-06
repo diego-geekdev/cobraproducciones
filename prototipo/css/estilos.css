@@ -1,4 +1,4 @@
-/* Cobra Producciones · Prototipo de diseño v2
+/* Cobra Producciones · Prototipo de diseño v3
    Manual de Marca: Rojo Cobra #E60613, Negro #000000, Blanco #FFFFFF.
    El rojo es acento: símbolo, botones, titulares clave. Nunca cubre una foto completa.
    Tipografías: Anton (titulares, condensada de peso fuerte) + Work Sans (lectura). */
@@ -320,3 +320,38 @@ h3 { font-size: clamp(24px, 3vw, 30px); }
 }
 
 img.sin-imagen { visibility: hidden; }
+
+/* ---------- v3 ---------- */
+.hero-proximo .num { font-size: 26px; }
+.cuenta-espera { position: relative; }
+.cuenta-espera strong { color: var(--gris-oscuro) !important; }
+.cuenta-nota { grid-column: 1 / -1; margin: 0; padding: 10px 12px; border-top: 1px solid var(--linea); color: var(--gris); font-size: 14px; text-align: center; }
+
+/* Destacados de la ficha de evento */
+.destacados-evento { display: grid; grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr)); gap: 0; margin-top: 32px; border-top: 1px solid var(--linea); }
+.destacados-evento div { padding: 16px 16px 0 0; }
+.destacados-evento strong { display: block; color: var(--gris); font-weight: 500; font-size: 14px; }
+.destacados-evento span { font-family: var(--f-titulo); text-transform: uppercase; font-size: clamp(24px, 3vw, 32px); line-height: 1.1; }
+.destacados-evento div:first-child span { color: var(--rojo); }
+
+/* Noticias */
+.grilla-noticias { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr)); gap: 28px; }
+.noticia { text-decoration: none; display: flex; flex-direction: column; gap: 10px; }
+.noticia-foto { aspect-ratio: 16 / 10; background: var(--grafito); overflow: hidden; }
+.noticia-foto img { width: 100%; height: 100%; object-fit: cover; transition: transform .4s; }
+.noticia:hover .noticia-foto img { transform: scale(1.04); }
+.noticia-meta { display: flex; gap: 12px; align-items: center; font-size: 14px; color: var(--gris); margin-top: 4px; }
+.categoria-noticia { color: var(--rojo); font-weight: 600; }
+.noticia h3 { font-size: 26px; }
+.noticia p { margin: 0; color: var(--gris); font-size: 16px; }
+.noticia:hover h3 { text-decoration: underline; text-decoration-color: var(--rojo); text-underline-offset: 4px; }
+
+/* Formulario sobre fondo blanco (clínicas) */
+.form-claro { margin-top: clamp(48px, 7vw, 80px); padding-top: clamp(40px, 6vw, 64px); border-top: 1px solid #D9D9D9; }
+.form-titulo { font-size: clamp(28px, 4vw, 40px); }
+.form-claro .campo input, .form-claro .campo select, .form-claro .campo textarea { background: var(--blanco); color: var(--negro); border-color: #BDBDBD; }
+.form-claro .campo input::placeholder, .form-claro .campo textarea::placeholder { color: #8A8A8A; }
+.form-claro .campo .error { color: #C00510; }
+.form-claro .campo.invalido input, .form-claro .campo.invalido select, .form-claro .campo.invalido textarea { border-color: #C00510; }
+.form-claro .form-ok { border-color: #D9D9D9; border-left-color: var(--rojo); }
+.form-claro .nota-form { color: #6B6B6B; }

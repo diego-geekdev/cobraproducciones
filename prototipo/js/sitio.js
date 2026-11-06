@@ -127,9 +127,8 @@
     });
   }
 
-  // ---------- Formulario de contacto (demostración) ----------
-  var form = document.getElementById('form-contacto');
-  if (form) {
+  // ---------- Formularios (demostración): contacto y solicitud de clínica ----------
+  document.querySelectorAll('form.formulario').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();
       var valido = true;
@@ -144,7 +143,7 @@
       form.reset();
     });
     form.querySelectorAll('input, select, textarea').forEach(function (c) {
-      c.addEventListener('input', function () { c.closest('.campo').classList.remove('invalido'); });
+      c.addEventListener('input', function () { var campo = c.closest('.campo'); if (campo) campo.classList.remove('invalido'); });
     });
-  }
+  });
 })();
