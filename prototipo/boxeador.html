@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>J. L. Acevedo, boxeador | Cobra Producciones</title>
-<meta name="description" content="Ficha de J. L. Acevedo: récord, próxima pelea, historial y fotos.">
+<meta name="description" content="Ficha de J. L. Acevedo: récord, última pelea, historial y fotos.">
 <link rel="icon" href="img/simbolo-rojo.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="aviso-prototipo"><strong>Prototipo de diseño.</strong> Los textos, fotos y datos son de ejemplo y se reemplazan por el contenido final.</div>
+<div class="aviso-prototipo"><strong>Prototipo de diseño.</strong> Textos, fechas y fotos son de ejemplo; se reemplazan por el contenido final.</div>
 
 <header class="cabecera">
   <div class="contenedor">
@@ -24,28 +24,26 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-principal">Menú</button>
     <nav class="nav" id="nav-principal" aria-label="Principal">
       <ul>
-        <li><a href="index.html">Inicio</a></li>
         <li><a href="index.html#cobra">Cobra</a></li>
         <li><a href="index.html#eventos">Eventos</a></li>
         <li><a href="index.html#boxeadores" aria-current="page">Boxeadores</a></li>
         <li><a href="index.html#clinicas">Clínicas</a></li>
-        <li><a href="index.html#sponsors">Sponsors</a></li>
-        <li><a href="#" class="nav-mas">Noticias</a></li>
-        <li><a href="index.html#galeria">Galería</a></li>
         <li><a href="index.html#cristian">Cristián Salas</a></li>
+        <li><a href="index.html#galeria">Galería</a></li>
+        <li><a href="index.html#sponsors">Sponsors</a></li>
         <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a class="nav-cta" href="index.html#proximo">Próximo evento</a></li>
       </ul>
     </nav>
   </div>
 </header>
-
 <main>
 
   <section style="border-bottom:1px solid var(--linea)">
     <div class="contenedor">
       <div class="migas" style="padding-top:28px"><a href="index.html">Inicio</a> / <a href="index.html#boxeadores">Boxeadores</a> / J. L. Acevedo</div>
-      <div class="boxeador-cabeza" style="padding-top:20px">
-        <div class="retrato"><img src="img/boxeador-1.jpg" alt="J. L. Acevedo"></div>
+      <div class="boxeador-cabeza">
+        <div class="retrato"><img src="img/boxeador-1.jpg" alt="J. L. Acevedo" data-pendiente></div>
         <div>
           <h1>J. L.<br>Acevedo</h1>
           <p class="apodo">Apodo por confirmar</p>
@@ -58,7 +56,7 @@
           </div>
 
           <div class="botones">
-            <a class="btn btn-rojo" href="evento.html">Ver próxima pelea</a>
+            <a class="btn btn-rojo" href="evento.html">Ver su última pelea</a>
             <a class="btn btn-borde" href="#">Instagram</a>
           </div>
         </div>
@@ -70,7 +68,7 @@
     <div class="contenedor ficha-grid">
 
       <div class="ficha-texto">
-        <h2 class="subtitulo" style="margin-top:0">Próxima pelea</h2>
+        <h2 class="subtitulo" style="margin-top:0">Última pelea</h2>
         <div class="combate">
           <div class="esquina esquina-a"><span class="nombre">J. L. Acevedo</span><span class="record">Récord por confirmar</span></div>
           <span class="vs" aria-label="contra">vs</span>
@@ -79,7 +77,7 @@
         </div>
 
         <h2 class="subtitulo">Biografía</h2>
-        <p class="pendiente">La biografía del boxeador se escribe desde el panel: inicios en el boxeo, trayectoria amateur y profesional, y objetivos.</p>
+        <p class="pendiente">La biografía se escribe desde el panel: inicios en el boxeo, trayectoria amateur y profesional, y objetivos.</p>
 
         <h2 class="subtitulo">Historial de combates</h2>
         <div class="tabla-scroll">
@@ -96,9 +94,9 @@
 
         <h2 class="subtitulo">Fotos</h2>
         <div class="galeria">
-          <figure><img src="img/galeria-4.jpg" alt="Foto del boxeador"></figure>
-          <figure><img src="img/galeria-5.jpg" alt="Foto del boxeador"></figure>
-          <figure><img src="img/galeria-6.jpg" alt="Foto del boxeador"></figure>
+          <button><img src="img/galeria-4.jpg" alt="Foto del boxeador" loading="lazy"></button>
+          <button><img src="img/galeria-5.jpg" alt="Foto del boxeador" loading="lazy"></button>
+          <button><img src="img/galeria-6.jpg" alt="Foto del boxeador" loading="lazy"></button>
         </div>
       </div>
 
@@ -107,7 +105,7 @@
           <h3>Ficha</h3>
           <table class="medidas">
             <tr><th>Categoría</th><td class="pendiente">Por confirmar</td></tr>
-            <tr><th>País</th><td>Chile</td></tr>
+            <tr><th>País</th><td class="pendiente">Por confirmar</td></tr>
             <tr><th>Ciudad</th><td class="pendiente">Por confirmar</td></tr>
             <tr><th>Guardia</th><td class="pendiente">Por confirmar</td></tr>
             <tr><th>Títulos</th><td class="pendiente">Por confirmar</td></tr>
@@ -125,12 +123,12 @@
 
 </main>
 
-
 <footer class="pie">
   <div class="contenedor">
     <div>
-      <h3>Cobra Producciones</h3>
+      <img src="img/logo-negativo.png" alt="Cobra Producciones" data-alternativo="Cobra Producciones">
       <p>Donde el boxeo se transforma en espectáculo, desarrollo y oportunidades.</p>
+      <p>Fundada por Cristián “La Cobra” Salas.</p>
     </div>
     <div>
       <h3>Sitio</h3>
@@ -139,6 +137,7 @@
         <li><a href="index.html#boxeadores">Boxeadores</a></li>
         <li><a href="index.html#clinicas">Clínicas</a></li>
         <li><a href="index.html#sponsors">Sponsors</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
     </div>
     <div>
@@ -147,7 +146,7 @@
         <li><a href="https://www.instagram.com/cobra_producciones_/">Instagram</a></li>
         <li><a href="#">Facebook</a></li>
         <li><a href="#">YouTube</a></li>
-        <li><a href="#">WhatsApp</a></li>
+        <li><a href="#">TikTok</a></li>
       </ul>
     </div>
     <div class="legal">
@@ -157,9 +156,21 @@
   </div>
 </footer>
 
+<a class="whatsapp" href="#" aria-label="Escribir a Cobra por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.9 3 3 6.6 3 11.2c0 2.3 1 4.4 2.7 5.9L5 21l4.2-1.9c.9.3 1.8.4 2.8.4 5.1 0 9-3.6 9-8.2S17.1 3 12 3zm-4 9.4a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm4 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm4 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6z"/></svg>
+</a>
+
 <div class="cta-movil">
-  <a class="btn btn-rojo" href="index.html#proximo">Ver evento</a>
-  <a class="btn btn-borde" style="background:#000" href="index.html#contacto">Contactar</a>
+  <a class="btn btn-rojo" href="index.html#proximo">Próximo evento</a>
+  <a class="btn btn-borde" href="index.html#contacto">Contactar</a>
+</div>
+
+<div class="visor" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <img src="" alt="">
+  <button class="cerrar" aria-label="Cerrar">✕</button>
+  <button class="ant" aria-label="Foto anterior">‹</button>
+  <button class="sig" aria-label="Foto siguiente">›</button>
+  <p class="contador"></p>
 </div>
 
 <script src="js/sitio.js"></script>

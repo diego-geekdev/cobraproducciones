@@ -14,7 +14,7 @@
 </head>
 <body>
 
-<div class="aviso-prototipo"><strong>Prototipo de diseño.</strong> Los textos, fotos y datos son de ejemplo y se reemplazan por el contenido final.</div>
+<div class="aviso-prototipo"><strong>Prototipo de diseño.</strong> Textos, fechas y fotos son de ejemplo; se reemplazan por el contenido final.</div>
 
 <header class="cabecera">
   <div class="contenedor">
@@ -24,21 +24,19 @@
     <button class="nav-toggle" aria-expanded="false" aria-controls="nav-principal">Menú</button>
     <nav class="nav" id="nav-principal" aria-label="Principal">
       <ul>
-        <li><a href="index.html" aria-current="page">Inicio</a></li>
-        <li><a href="#cobra">Cobra</a></li>
-        <li><a href="#eventos">Eventos</a></li>
-        <li><a href="#boxeadores">Boxeadores</a></li>
-        <li><a href="#clinicas">Clínicas</a></li>
-        <li><a href="#sponsors">Sponsors</a></li>
-        <li><a href="#" class="nav-mas">Noticias</a></li>
-        <li><a href="#galeria">Galería</a></li>
-        <li><a href="#cristian">Cristián Salas</a></li>
-        <li><a href="#contacto">Contacto</a></li>
+        <li><a href="index.html#cobra">Cobra</a></li>
+        <li><a href="index.html#eventos">Eventos</a></li>
+        <li><a href="index.html#boxeadores">Boxeadores</a></li>
+        <li><a href="index.html#clinicas">Clínicas</a></li>
+        <li><a href="index.html#cristian">Cristián Salas</a></li>
+        <li><a href="index.html#galeria">Galería</a></li>
+        <li><a href="index.html#sponsors">Sponsors</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
+        <li><a class="nav-cta" href="index.html#proximo">Próximo evento</a></li>
       </ul>
     </nav>
   </div>
 </header>
-
 <main>
 
   <!-- HERO -->
@@ -53,198 +51,286 @@
       </h1>
       <p class="hero-bajada">Cobra Producciones es una promotora de boxeo profesional y productora de eventos deportivos en Chile.</p>
       <div class="botones">
-        <a class="btn btn-rojo" href="#proximo">Próximos eventos</a>
+        <a class="btn btn-rojo" href="#eventos">Próximos eventos</a>
         <a class="btn btn-borde" href="#cobra">Conoce Cobra</a>
+      </div>
+      <div>
+        <a class="hero-proximo" href="#proximo">
+          <span class="num" data-dias-a="2026-12-12T21:00:00-03:00">51</span>
+          <span><small>días para la próxima velada</small><strong>Ver cartelera y entradas</strong></span>
+        </a>
       </div>
     </div>
   </section>
 
-  <!-- A. PRÓXIMO EVENTO -->
+  <!-- PRÓXIMO EVENTO -->
   <section class="seccion" id="proximo" aria-labelledby="proximo-titulo">
     <div class="contenedor destacado">
-      <a class="afiche" href="evento.html">
-        <img src="img/afiche-super4.png" alt="Afiche de Super 4, 7 de junio de 2025">
-      </a>
+      <div class="afiche afiche-pendiente">
+        <img src="img/simbolo-rojo.png" alt="">
+        <span>El afiche oficial se publica aquí cuando Cobra lo lance</span>
+      </div>
       <div>
-        <span class="estado estado-confirmado">Próximo evento</span>
-        <h2 id="proximo-titulo">Super 4</h2>
-        <p class="texto-secundario">Campeonato de boxeo profesional, con Martín Vargas como invitado especial.</p>
+        <span class="estado estado-proximamente">Próximo evento</span>
+        <span class="estado estado-ejemplo">Fecha de ejemplo</span>
+        <h2 id="proximo-titulo">Próxima velada Cobra</h2>
+        <p class="texto-secundario" style="margin:0">Boxeo profesional en Santiago. Cartelera por anunciar.</p>
+
+        <div class="cuenta" data-cuenta="2026-12-12T21:00:00-03:00" role="timer" aria-label="Cuenta regresiva para la próxima velada">
+          <div><strong data-d>51</strong><span>días</span></div>
+          <div><strong data-h>00</strong><span>horas</span></div>
+          <div><strong data-m>00</strong><span>min</span></div>
+          <div><strong data-s>00</strong><span>seg</span></div>
+        </div>
+
         <dl class="datos">
-          <dt>Fecha</dt><dd>Sábado 7 de junio de 2025, 19:00</dd>
-          <dt>Lugar</dt><dd>Club Deportivo Cultural México Chile, Av. Manuel Rodríguez Norte 827, Santiago</dd>
-          <dt>Pelea estelar</dt><dd>J. L. Acevedo vs. A. Arcoverde</dd>
-          <dt>Entradas</dt><dd>Passline</dd>
+          <dt>Fecha</dt><dd>Sábado 12 de diciembre, 21:00</dd>
+          <dt>Lugar</dt><dd>Santiago · recinto por confirmar</dd>
+          <dt>Entradas</dt><dd>A la venta pronto</dd>
         </dl>
+
+        <div class="combate combate-pendiente" style="margin-bottom:28px">
+          <div class="esquina esquina-a"><span class="nombre">Por anunciar</span><span class="record">—</span></div>
+          <span class="vs" aria-label="contra">vs</span>
+          <div class="esquina esquina-b"><span class="nombre">Por anunciar</span><span class="record">—</span></div>
+          <div class="combate-meta"><span class="principal">Pelea estelar</span><span>Categoría y rounds por confirmar</span></div>
+        </div>
+
         <div class="botones">
-          <a class="btn btn-rojo" href="#">Comprar entradas</a>
-          <a class="btn btn-borde" href="evento.html">Ver evento</a>
+          <a class="btn btn-rojo" href="#">Avísame cuando salgan las entradas</a>
+          <a class="btn btn-borde" href="evento.html">Ver la última velada</a>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- B. EVENTOS -->
-  <section class="seccion" id="eventos" aria-labelledby="eventos-titulo" style="padding-top:0">
+  <!-- EVENTOS -->
+  <section class="seccion oscura" id="eventos" aria-labelledby="eventos-titulo">
     <div class="contenedor">
       <div class="seccion-cabeza">
         <div>
           <h2 id="eventos-titulo">Eventos</h2>
-          <p>Carteleras, resultados y fotos de cada velada.</p>
+          <p>Cada velada con su cartelera, resultados y fotos.</p>
         </div>
-        <a class="btn btn-texto" href="#">Ver todos los eventos</a>
       </div>
-      <div class="grilla-eventos">
-        <a class="tarjeta-evento" href="#">
-          <div class="afiche"><img src="img/afiche-final-super4.png" alt="Afiche de la Final Super 4"></div>
-          <div class="cuerpo">
-            <span class="estado estado-finalizado">Finalizado</span>
-            <h3>Final Super 4 y homenaje a Martín Vargas</h3>
-            <span class="fecha">4 de octubre de 2025</span>
-            <span class="lugar">Teatro La Cúpula, Parque O'Higgins</span>
-            <span class="ver">Ver evento</span>
-          </div>
-        </a>
-        <a class="tarjeta-evento" href="evento.html">
-          <div class="afiche"><img src="img/afiche-super4.png" alt="Afiche de Super 4"></div>
-          <div class="cuerpo">
-            <span class="estado estado-confirmado">Confirmado</span>
-            <h3>Super 4</h3>
-            <span class="fecha">7 de junio de 2025</span>
-            <span class="lugar">Club México, Santiago</span>
-            <span class="ver">Ver evento</span>
-          </div>
-        </a>
-        <a class="tarjeta-evento" href="#">
-          <div class="afiche"><img src="img/afiche-4f-final.png" alt="Afiche de la Gran Final Los 4 Fantásticos"></div>
-          <div class="cuerpo">
-            <span class="estado estado-finalizado">Finalizado</span>
-            <h3>Gran final Los 4 Fantásticos</h3>
-            <span class="fecha">16 de noviembre de 2024</span>
-            <span class="lugar">Club México, Santiago</span>
-            <span class="ver">Ver evento</span>
-          </div>
-        </a>
-        <a class="tarjeta-evento" href="#">
-          <div class="afiche"><img src="img/afiche-4f.png" alt="Afiche de Los 4 Fantásticos"></div>
-          <div class="cuerpo">
-            <span class="estado estado-finalizado">Finalizado</span>
-            <h3>Los 4 Fantásticos</h3>
-            <span class="fecha">31 de agosto de 2024</span>
-            <span class="lugar">Club México, Santiago</span>
-            <span class="ver">Ver evento</span>
-          </div>
-        </a>
+
+      <div class="pestanas" role="tablist" aria-label="Eventos">
+        <button role="tab" id="tab-prox" aria-controls="panel-prox" aria-selected="false" tabindex="-1">Próximos<span class="cuantos">1</span></button>
+        <button role="tab" id="tab-real" aria-controls="panel-real" aria-selected="true">Realizados<span class="cuantos">4</span></button>
+      </div>
+
+      <div role="tabpanel" id="panel-prox" aria-labelledby="tab-prox" hidden>
+        <div class="grilla-eventos">
+          <a class="tarjeta-evento" href="#proximo">
+            <div class="afiche afiche-pendiente"><img src="img/simbolo-rojo.png" alt=""><span>Afiche por publicar</span></div>
+            <div class="cuerpo">
+              <span class="estado estado-proximamente">Próximamente</span>
+              <h3>Próxima velada Cobra</h3>
+              <span class="fecha">12 de diciembre · fecha de ejemplo</span>
+              <span class="lugar">Santiago</span>
+              <span class="ver">Ver evento</span>
+            </div>
+          </a>
+        </div>
+      </div>
+
+      <div role="tabpanel" id="panel-real" aria-labelledby="tab-real">
+        <div class="grilla-eventos">
+          <a class="tarjeta-evento" href="#">
+            <div class="afiche"><img src="img/afiche-final-super4.png" alt="Afiche de la Final Super 4 y homenaje a Martín Vargas"></div>
+            <div class="cuerpo">
+              <span class="estado estado-finalizado">Finalizado</span>
+              <h3>Final Super 4 y homenaje a Martín Vargas</h3>
+              <span class="fecha">4 de octubre de 2025</span>
+              <span class="lugar">Teatro La Cúpula, Parque O'Higgins</span>
+              <span class="ver">Resultados y fotos</span>
+            </div>
+          </a>
+          <a class="tarjeta-evento" href="evento.html">
+            <div class="afiche"><img src="img/afiche-super4.png" alt="Afiche de Super 4"></div>
+            <div class="cuerpo">
+              <span class="estado estado-finalizado">Finalizado</span>
+              <h3>Super 4</h3>
+              <span class="fecha">7 de junio de 2025</span>
+              <span class="lugar">Club México, Santiago</span>
+              <span class="ver">Resultados y fotos</span>
+            </div>
+          </a>
+          <a class="tarjeta-evento" href="#">
+            <div class="afiche"><img src="img/afiche-4f-final.png" alt="Afiche de la Gran Final Los 4 Fantásticos"></div>
+            <div class="cuerpo">
+              <span class="estado estado-finalizado">Finalizado</span>
+              <h3>Gran final Los 4 Fantásticos</h3>
+              <span class="fecha">16 de noviembre de 2024</span>
+              <span class="lugar">Club México, Santiago</span>
+              <span class="ver">Resultados y fotos</span>
+            </div>
+          </a>
+          <a class="tarjeta-evento" href="#">
+            <div class="afiche"><img src="img/afiche-4f.png" alt="Afiche de Los 4 Fantásticos"></div>
+            <div class="cuerpo">
+              <span class="estado estado-finalizado">Finalizado</span>
+              <h3>Los 4 Fantásticos</h3>
+              <span class="fecha">31 de agosto de 2024</span>
+              <span class="lugar">Club México, Santiago</span>
+              <span class="ver">Resultados y fotos</span>
+            </div>
+          </a>
+        </div>
       </div>
     </div>
   </section>
 
-  <!-- C. BOXEADORES -->
-  <section class="seccion" id="boxeadores" aria-labelledby="boxeadores-titulo" style="background:var(--carbon)">
+  <!-- COBRA / FILOSOFÍA -->
+  <section class="seccion filosofia" id="cobra" aria-labelledby="cobra-titulo">
+    <img class="marca-agua" src="img/simbolo-rojo.png" alt="">
+    <div class="contenedor">
+      <h2 id="cobra-titulo" class="sr-only">Cobra Producciones</h2>
+      <p class="cita-marca">Donde el boxeo se transforma en <em>espectáculo, desarrollo y oportunidades.</em></p>
+      <p class="intro-cobra">Cobra Producciones nace desde el boxeo y para el boxeo: desarrolla eventos profesionales, potencia nuevos talentos y genera oportunidades para boxeadores que buscan proyectar sus carreras dentro y fuera de Chile.</p>
+      <div class="valores">
+        <div class="valor"><h3>Coraje</h3><p>Enfrentar desafíos y promover oportunidades competitivas.</p></div>
+        <div class="valor"><h3>Estrategia</h3><p>Planificación, criterio deportivo y producción profesional.</p></div>
+        <div class="valor"><h3>Agresividad deportiva</h3><p>Energía, intensidad y determinación dentro del marco del deporte.</p></div>
+        <div class="valor"><h3>Fortaleza mental</h3><p>Preparación, disciplina, resiliencia y control emocional.</p></div>
+        <div class="valor"><h3>Corazón incansable</h3><p>Compromiso, perseverancia y pasión por el boxeo.</p></div>
+      </div>
+      <p style="margin-top:44px"><a class="btn btn-borde" href="#">Conoce Cobra Producciones</a></p>
+    </div>
+  </section>
+
+  <!-- BOXEADORES -->
+  <section class="seccion oscura" id="boxeadores" aria-labelledby="boxeadores-titulo">
     <div class="contenedor">
       <div class="seccion-cabeza">
         <div>
           <h2 id="boxeadores-titulo">Boxeadores Cobra</h2>
-          <p>Talentos nuevos y boxeadores consolidados que compiten con Cobra Producciones.</p>
+          <p>Talentos nuevos y boxeadores consolidados. Cada uno con su récord, historial y próxima pelea.</p>
         </div>
         <a class="btn btn-texto" href="#">Ver todos los boxeadores</a>
       </div>
       <div class="grilla-boxeadores">
         <a class="tarjeta-boxeador" href="boxeador.html">
-          <div class="foto"><img src="img/boxeador-1.jpg" alt="J. L. Acevedo"><span class="categoria">Categoría por confirmar</span></div>
+          <div class="foto"><img src="img/boxeador-1.jpg" alt="J. L. Acevedo" data-pendiente><span class="categoria">Categoría por confirmar</span></div>
           <h3>J. L. Acevedo</h3>
-          <span class="apodo">Récord por confirmar</span>
+          <span class="apodo">Ver ficha y récord</span>
         </a>
         <a class="tarjeta-boxeador" href="#">
-          <div class="foto"><img src="img/boxeador-2.jpg" alt="A. Arcoverde"><span class="categoria">Categoría por confirmar</span></div>
+          <div class="foto"><img src="img/boxeador-2.jpg" alt="A. Arcoverde" data-pendiente><span class="categoria">Categoría por confirmar</span></div>
           <h3>A. Arcoverde</h3>
-          <span class="apodo">Récord por confirmar</span>
+          <span class="apodo">Ver ficha y récord</span>
         </a>
         <div class="tarjeta-boxeador tarjeta-vacia">
-          <div class="foto">Aquí aparecerán los boxeadores que Cobra cargue desde el panel</div>
+          <div class="foto">Cada boxeador que Cobra cargue desde el panel aparece aquí, con su propia ficha</div>
         </div>
       </div>
     </div>
   </section>
 
-  <!-- D. COBRA PRODUCCIONES -->
-  <section class="seccion" id="cobra" aria-labelledby="cobra-titulo">
-    <div class="contenedor bloque-dividido">
-      <div>
-        <h2 id="cobra-titulo">Desde el boxeo y para el boxeo</h2>
-      </div>
-      <div>
-        <p>Cobra Producciones nace con el propósito de desarrollar eventos profesionales, potenciar nuevos talentos y generar oportunidades para boxeadores que buscan proyectar sus carreras dentro y fuera de Chile.</p>
-        <p class="texto-secundario">Coraje, estrategia, fortaleza mental y un corazón incansable: eso es Cobra.</p>
-        <a class="btn btn-borde" href="#">Conoce Cobra Producciones</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- E. CLÍNICAS -->
+  <!-- CLÍNICAS -->
   <section class="seccion seccion-blanca" id="clinicas" aria-labelledby="clinicas-titulo">
-    <div class="contenedor bloque-dividido">
+    <div class="contenedor clinicas-grid">
       <div>
         <h2 id="clinicas-titulo">El rendimiento también se entrena</h2>
+        <p class="texto-secundario" style="margin-top:18px">Clínicas de Psicología del Deporte aplicadas al boxeo y a los deportes de combate, para gimnasios, clubes, federaciones y organizaciones deportivas.</p>
+        <div class="botones" style="margin-top:28px">
+          <a class="btn btn-rojo" href="#contacto">Solicitar clínica</a>
+        </div>
       </div>
       <div>
-        <p>Clínicas de Psicología del Deporte aplicadas al boxeo y a los deportes de combate, para gimnasios, clubes, federaciones y organizaciones deportivas.</p>
-        <ul class="temas" aria-label="Algunas temáticas">
+        <div class="pestanas" role="tablist" aria-label="Modalidades">
+          <button role="tab" id="tab-c1" aria-controls="panel-c1" aria-selected="true">Clínica grupal</button>
+          <button role="tab" id="tab-c2" aria-controls="panel-c2" aria-selected="false" tabindex="-1">Taller</button>
+          <button role="tab" id="tab-c3" aria-controls="panel-c3" aria-selected="false" tabindex="-1">Charla</button>
+          <button role="tab" id="tab-c4" aria-controls="panel-c4" aria-selected="false" tabindex="-1">Sesión especial</button>
+        </div>
+        <div class="modalidad" role="tabpanel" id="panel-c1" aria-labelledby="tab-c1">
+          <h3>Clínica grupal</h3>
+          <p>Trabajo práctico con todo el equipo: herramientas de preparación mental aplicadas al entrenamiento y la competencia.</p>
+          <p class="para">Para clubes, gimnasios, asociaciones y federaciones.</p>
+        </div>
+        <div class="modalidad" role="tabpanel" id="panel-c2" aria-labelledby="tab-c2" hidden>
+          <h3>Taller</h3>
+          <p>Sesiones enfocadas en una temática específica, como el manejo de la ansiedad precompetitiva o el corte de peso.</p>
+          <p class="para">Para grupos de deportistas o entrenadores.</p>
+        </div>
+        <div class="modalidad" role="tabpanel" id="panel-c3" aria-labelledby="tab-c3" hidden>
+          <h3>Charla</h3>
+          <p>Una presentación para entender cómo la mente influye en el rendimiento y qué se puede trabajar.</p>
+          <p class="para">Para deportistas, entrenadores, dirigentes o familias.</p>
+        </div>
+        <div class="modalidad" role="tabpanel" id="panel-c4" aria-labelledby="tab-c4" hidden>
+          <h3>Sesión especial</h3>
+          <p>Una actividad diseñada a medida según las necesidades de cada organización.</p>
+          <p class="para">Para organizaciones con objetivos específicos.</p>
+        </div>
+        <p class="temas-titulo">Algunas temáticas</p>
+        <ul class="temas">
           <li>Ansiedad precompetitiva</li>
           <li>Concentración y foco</li>
           <li>Control emocional</li>
+          <li>Visualización</li>
+          <li>Rutinas precompetitivas</li>
           <li>Manejo de la derrota</li>
           <li>Corte de peso</li>
+          <li>Comunicación entrenador-deportista</li>
         </ul>
-        <div class="botones">
-          <a class="btn btn-rojo" href="#">Solicitar clínica</a>
-          <a class="btn btn-borde" href="#">Conoce las clínicas</a>
-        </div>
       </div>
     </div>
   </section>
 
-  <!-- F. CRISTIÁN -->
+  <!-- CRISTIÁN -->
   <section class="seccion" id="cristian" aria-labelledby="cristian-titulo">
     <div class="contenedor bloque-dividido">
-      <div class="retrato"><img src="img/cristian.jpg" alt="Cristián “La Cobra” Salas"></div>
+      <div class="retrato"><img src="img/cristian.jpg" alt="Cristián “La Cobra” Salas" data-pendiente></div>
       <div>
-        <p class="texto-secundario" style="margin:0 0 10px">Fundada por</p>
+        <p class="fundada">Fundada por</p>
         <h2 id="cristian-titulo">Cristián “La Cobra” Salas</h2>
         <div class="roles"><span>Exboxeador profesional</span><span>Psicólogo del deporte</span><span>Comentarista</span><span>Promotor</span></div>
-        <p>Su trayectoria dentro y fuera del ring respalda el trabajo de Cobra Producciones.</p>
+        <p>Su experiencia dentro del ring, su comprensión de la mente del deportista y su visión del boxeo desde la competencia, la comunicación y la promoción respaldan el trabajo de Cobra Producciones.</p>
         <a class="btn btn-borde" href="#">Conoce a Cristián</a>
       </div>
     </div>
   </section>
 
   <!-- GALERÍA -->
-  <section class="seccion" id="galeria" aria-labelledby="galeria-titulo" style="padding-top:0">
+  <section class="seccion oscura" id="galeria" aria-labelledby="galeria-titulo">
     <div class="contenedor">
       <div class="seccion-cabeza">
-        <h2 id="galeria-titulo">Galería</h2>
+        <div>
+          <h2 id="galeria-titulo">Galería</h2>
+          <p>Veladas, pesajes, entrenamientos y clínicas. Toca una foto para verla en grande.</p>
+        </div>
         <a class="btn btn-texto" href="#">Ver todos los álbumes</a>
       </div>
       <div class="galeria">
-        <figure><img src="img/galeria-1.jpg" alt="Foto de velada"></figure>
-        <figure><img src="img/galeria-2.jpg" alt="Foto de velada"></figure>
-        <figure><img src="img/galeria-3.jpg" alt="Foto de velada"></figure>
-        <figure><img src="img/galeria-4.jpg" alt="Foto de velada"></figure>
-        <figure><img src="img/galeria-5.jpg" alt="Foto de velada"></figure>
-        <figure><img src="img/galeria-6.jpg" alt="Foto de velada"></figure>
+        <button><img src="img/galeria-1.jpg" alt="Velada Los 4 Fantásticos" loading="lazy"></button>
+        <button><img src="img/galeria-2.jpg" alt="Velada Los 4 Fantásticos" loading="lazy"></button>
+        <button><img src="img/galeria-3.jpg" alt="Velada Los 4 Fantásticos" loading="lazy"></button>
+        <button><img src="img/galeria-4.jpg" alt="Velada Los 4 Fantásticos" loading="lazy"></button>
+        <button><img src="img/galeria-5.jpg" alt="Gran final Los 4 Fantásticos" loading="lazy"></button>
+        <button><img src="img/galeria-6.jpg" alt="Gran final Los 4 Fantásticos" loading="lazy"></button>
       </div>
     </div>
   </section>
 
-  <!-- G. SPONSORS -->
-  <section class="seccion" id="sponsors" aria-labelledby="sponsors-titulo" style="background:var(--carbon)">
+  <!-- SPONSORS -->
+  <section class="seccion" id="sponsors" aria-labelledby="sponsors-titulo">
     <div class="contenedor">
       <div class="seccion-cabeza">
         <div>
-          <h2 id="sponsors-titulo">Sponsors</h2>
-          <p>Empresas que acompañan al boxeo profesional chileno junto a Cobra.</p>
+          <h2 id="sponsors-titulo">Auspicia el boxeo con Cobra</h2>
+          <p>Tu marca junto a la disciplina, la superación y el esfuerzo, antes, durante y después de cada velada.</p>
         </div>
-        <a class="btn btn-rojo" href="#">Quiero ser sponsor</a>
+        <a class="btn btn-rojo" href="#contacto">Quiero ser sponsor</a>
       </div>
+      <div class="beneficios">
+        <div class="beneficio"><strong>Afiches y redes</strong><span>Tu logo en la gráfica oficial y en la difusión del evento.</span></div>
+        <div class="beneficio"><strong>Ring y recinto</strong><span>Presencia en esquineros, lona, backings y activaciones.</span></div>
+        <div class="beneficio"><strong>Transmisiones</strong><span>Placas, menciones e integración en la emisión.</span></div>
+        <div class="beneficio"><strong>Por combate</strong><span>Asocia tu marca a una pelea o segmento destacado.</span></div>
+      </div>
+      <p class="texto-secundario" style="margin:0 0 16px">Marcas que han acompañado a Cobra</p>
       <div class="sponsors">
         <div class="sponsor">Kinedlife</div>
         <div class="sponsor">Orangu Sport</div>
@@ -257,16 +343,40 @@
   </section>
 
   <!-- CONTACTO -->
-  <section class="seccion" id="contacto" aria-labelledby="contacto-titulo">
-    <div class="contenedor bloque-dividido">
-      <h2 id="contacto-titulo">Hablemos de boxeo</h2>
+  <section class="seccion oscura" id="contacto" aria-labelledby="contacto-titulo">
+    <div class="contenedor contacto-grid">
       <div>
-        <p>Boxeadores, managers, medios, sponsors y organizaciones deportivas: escríbenos y te respondemos a la brevedad.</p>
-        <div class="botones">
-          <a class="btn btn-rojo" href="#">Contactar</a>
-          <a class="btn btn-borde" href="#">Escribir por WhatsApp</a>
-        </div>
+        <h2 id="contacto-titulo">Hablemos de boxeo</h2>
+        <p class="texto-secundario" style="margin-top:16px">Boxeadores, managers, medios, sponsors y organizaciones deportivas. Elige el motivo y te respondemos a la brevedad.</p>
+        <ul class="canales">
+          <li><a href="#">WhatsApp <span>Respuesta más rápida</span></a></li>
+          <li><a href="https://www.instagram.com/cobra_producciones_/">Instagram <span>@cobra_producciones_</span></a></li>
+          <li><a href="#">Correo <span>contacto@cobraproducciones.cl</span></a></li>
+        </ul>
       </div>
+      <form class="formulario" id="form-contacto" novalidate>
+        <div class="campo"><label for="f-nombre">Nombre</label><input id="f-nombre" name="nombre" autocomplete="name" required><p class="error">Escribe tu nombre.</p></div>
+        <div class="campo"><label for="f-org">Organización o empresa</label><input id="f-org" name="organizacion" autocomplete="organization"></div>
+        <div class="campo"><label for="f-correo">Correo</label><input id="f-correo" name="correo" type="email" autocomplete="email" required><p class="error">Escribe un correo válido.</p></div>
+        <div class="campo"><label for="f-tel">Teléfono</label><input id="f-tel" name="telefono" type="tel" autocomplete="tel" placeholder="+56 9 1234 5678"></div>
+        <div class="campo ancho"><label for="f-motivo">Motivo de contacto</label>
+          <select id="f-motivo" name="motivo" required>
+            <option value="">Elige una opción</option>
+            <option>Soy boxeador</option>
+            <option>Manager o entrenador</option>
+            <option>Quiero ser sponsor</option>
+            <option>Medio de comunicación</option>
+            <option>Organización deportiva</option>
+            <option>Club o gimnasio</option>
+            <option>Solicitud de clínica</option>
+            <option>Evento</option>
+            <option>Otro</option>
+          </select><p class="error">Elige un motivo.</p></div>
+        <div class="campo ancho"><label for="f-msj">Mensaje</label><textarea id="f-msj" name="mensaje" required></textarea><p class="error">Cuéntanos en qué te podemos ayudar.</p></div>
+        <div class="ancho"><button class="btn btn-rojo" type="submit">Enviar mensaje</button></div>
+        <div class="form-ok" role="status"><strong>Mensaje enviado.</strong> En el sitio final, este formulario llega al correo de Cobra y queda guardado en el panel.</div>
+        <p class="nota-form">Prototipo: el formulario valida los campos pero no envía datos.</p>
+      </form>
     </div>
   </section>
 
@@ -275,16 +385,18 @@
 <footer class="pie">
   <div class="contenedor">
     <div>
-      <h3>Cobra Producciones</h3>
+      <img src="img/logo-negativo.png" alt="Cobra Producciones" data-alternativo="Cobra Producciones">
       <p>Donde el boxeo se transforma en espectáculo, desarrollo y oportunidades.</p>
+      <p>Fundada por Cristián “La Cobra” Salas.</p>
     </div>
     <div>
       <h3>Sitio</h3>
       <ul>
-        <li><a href="#eventos">Eventos</a></li>
-        <li><a href="#boxeadores">Boxeadores</a></li>
-        <li><a href="#clinicas">Clínicas</a></li>
-        <li><a href="#sponsors">Sponsors</a></li>
+        <li><a href="index.html#eventos">Eventos</a></li>
+        <li><a href="index.html#boxeadores">Boxeadores</a></li>
+        <li><a href="index.html#clinicas">Clínicas</a></li>
+        <li><a href="index.html#sponsors">Sponsors</a></li>
+        <li><a href="index.html#contacto">Contacto</a></li>
       </ul>
     </div>
     <div>
@@ -293,7 +405,7 @@
         <li><a href="https://www.instagram.com/cobra_producciones_/">Instagram</a></li>
         <li><a href="#">Facebook</a></li>
         <li><a href="#">YouTube</a></li>
-        <li><a href="#">WhatsApp</a></li>
+        <li><a href="#">TikTok</a></li>
       </ul>
     </div>
     <div class="legal">
@@ -303,9 +415,21 @@
   </div>
 </footer>
 
+<a class="whatsapp" href="#" aria-label="Escribir a Cobra por WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3C6.9 3 3 6.6 3 11.2c0 2.3 1 4.4 2.7 5.9L5 21l4.2-1.9c.9.3 1.8.4 2.8.4 5.1 0 9-3.6 9-8.2S17.1 3 12 3zm-4 9.4a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm4 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6zm4 0a1.3 1.3 0 1 1 0-2.6 1.3 1.3 0 0 1 0 2.6z"/></svg>
+</a>
+
 <div class="cta-movil">
-  <a class="btn btn-rojo" href="#proximo">Ver evento</a>
-  <a class="btn btn-borde" style="background:#000" href="#contacto">Contactar</a>
+  <a class="btn btn-rojo" href="#proximo">Próximo evento</a>
+  <a class="btn btn-borde" href="index.html#contacto">Contactar</a>
+</div>
+
+<div class="visor" role="dialog" aria-modal="true" aria-label="Foto ampliada">
+  <img src="" alt="">
+  <button class="cerrar" aria-label="Cerrar">✕</button>
+  <button class="ant" aria-label="Foto anterior">‹</button>
+  <button class="sig" aria-label="Foto siguiente">›</button>
+  <p class="contador"></p>
 </div>
 
 <script src="js/sitio.js"></script>
