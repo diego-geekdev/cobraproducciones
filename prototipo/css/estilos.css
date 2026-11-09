@@ -1,4 +1,4 @@
-/* Cobra Producciones · Prototipo de diseño v3
+/* Cobra Producciones · Prototipo de diseño v4
    Manual de Marca: Rojo Cobra #E60613, Negro #000000, Blanco #FFFFFF.
    El rojo es acento: símbolo, botones, titulares clave. Nunca cubre una foto completa.
    Tipografías: Anton (titulares, condensada de peso fuerte) + Work Sans (lectura). */
@@ -234,8 +234,6 @@ h3 { font-size: clamp(24px, 3vw, 30px); }
 .beneficio { padding: 20px 20px 20px 0; border-bottom: 1px solid var(--linea); }
 .beneficio strong { display: block; font-size: 17px; margin-bottom: 4px; }
 .beneficio span { color: var(--gris); font-size: 15px; }
-.sponsors { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(170px, 100%), 1fr)); gap: 1px; background: var(--linea); border: 1px solid var(--linea); }
-.sponsor { background: var(--negro); min-height: 100px; display: flex; align-items: center; justify-content: center; text-align: center; padding: 16px; font-weight: 600; color: var(--gris); }
 
 /* ---------- Contacto ---------- */
 .contacto-grid { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); gap: clamp(28px, 6vw, 80px); }
@@ -355,3 +353,101 @@ img.sin-imagen { visibility: hidden; }
 .form-claro .campo.invalido input, .form-claro .campo.invalido select, .form-claro .campo.invalido textarea { border-color: #C00510; }
 .form-claro .form-ok { border-color: #D9D9D9; border-left-color: var(--rojo); }
 .form-claro .nota-form { color: #6B6B6B; }
+
+/* ---------- Carrusel de sponsors ---------- */
+.carrusel-sponsors { position: relative; overflow: hidden; border-top: 1px solid var(--linea); border-bottom: 1px solid var(--linea); padding: 28px 0;
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+          mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent); }
+.carrusel-pista { display: flex; width: max-content; animation: carrusel-giro 40s linear infinite; }
+.carrusel-lista { display: flex; align-items: center; list-style: none; margin: 0; padding: 0; }
+.carrusel-lista li { font-family: var(--f-titulo); font-size: clamp(22px, 3vw, 34px); line-height: 1; text-transform: uppercase; letter-spacing: .02em; color: var(--gris-oscuro); white-space: nowrap; padding: 0 clamp(28px, 4vw, 56px); transition: color .2s; }
+.carrusel-lista li:hover { color: var(--blanco); }
+.carrusel-sponsors:hover .carrusel-pista,
+.carrusel-bloque.pausado .carrusel-pista { animation-play-state: paused; }
+.carrusel-bloque { display: flex; flex-direction: column; align-items: flex-end; }
+.carrusel-bloque .carrusel-sponsors { align-self: stretch; }
+.carrusel-pausa { margin-top: 8px; background: none; border: 0; color: var(--gris-oscuro); font-size: 13px; cursor: pointer; padding: 4px 8px; text-decoration: underline; text-underline-offset: 3px; }
+.carrusel-pausa:hover { color: var(--blanco); }
+@keyframes carrusel-giro { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@media (max-width: 600px) { .carrusel-pista { animation-duration: 28s; } }
+
+/* Sin movimiento: lista fija en varias líneas */
+@media (prefers-reduced-motion: reduce) {
+  .carrusel-sponsors { -webkit-mask-image: none; mask-image: none; }
+  .carrusel-pista { animation: none; width: auto; }
+  .carrusel-lista { flex-wrap: wrap; justify-content: center; row-gap: 16px; }
+  .carrusel-lista[aria-hidden="true"], .carrusel-pausa { display: none; }
+}
+
+/* ======================================================================
+   v4 · Movimiento e interacciones
+   Todo el movimiento se apaga si el visitante pidió "reducir movimiento".
+   ====================================================================== */
+
+/* Barra de progreso de lectura (la crea sitio.js) */
+.progreso { position: fixed; top: 0; left: 0; right: 0; height: 3px; z-index: 70; background: var(--rojo); transform-origin: 0 50%; transform: scaleX(0); pointer-events: none; }
+
+/* Encabezado compacto al bajar */
+.cabecera { transition: background .25s; }
+.cabecera .contenedor { transition: min-height .25s; }
+.logo img { transition: height .25s; }
+.cabecera.compacta { background: rgba(0,0,0,.98); }
+.cabecera.compacta .contenedor { min-height: 58px; }
+.cabecera.compacta .logo img { height: 36px; }
+
+/* Botones */
+.btn { transition: background .2s, color .2s, border-color .2s, transform .2s; }
+.btn:active { transform: translateY(1px); }
+
+/* Volver arriba (lo crea sitio.js) */
+.arriba { position: fixed; right: 26px; bottom: 90px; z-index: 60; width: 44px; height: 44px; display: flex; align-items: center; justify-content: center; background: var(--negro); color: var(--blanco); border: 1px solid var(--linea); border-radius: var(--radio); cursor: pointer; opacity: 0; visibility: hidden; transform: translateY(8px); transition: opacity .25s, transform .25s, visibility .25s, border-color .2s; }
+.arriba.visible { opacity: 1; visibility: visible; transform: none; }
+.arriba:hover { border-color: var(--rojo); }
+.arriba svg { width: 18px; height: 18px; }
+@media (max-width: 720px) { .arriba { right: 18px; bottom: 148px; } }
+
+/* Tarjetas de evento: se elevan, borde rojo y afiche con acercamiento */
+.tarjeta-evento { transition: transform .25s, border-color .25s, box-shadow .25s; }
+.tarjeta-evento .afiche img { transition: transform .5s; }
+.tarjeta-evento:hover, .tarjeta-evento:focus-visible { transform: translateY(-6px); border-color: var(--rojo); box-shadow: 0 16px 32px rgba(0,0,0,.5); }
+.tarjeta-evento:hover .afiche img { transform: scale(1.05); }
+.tarjeta-evento .ver { transition: letter-spacing .25s; }
+.tarjeta-evento:hover .ver { letter-spacing: .03em; }
+
+/* Boxeadores: se elevan y la foto pasa a color (ya existía) con acercamiento */
+.tarjeta-boxeador .foto { transition: transform .3s, box-shadow .3s; }
+.tarjeta-boxeador .foto img { transition: filter .3s, transform .5s; }
+.tarjeta-boxeador:hover .foto, .tarjeta-boxeador:focus-visible .foto { transform: translateY(-6px); box-shadow: 0 0 0 2px var(--rojo), 0 16px 32px rgba(0,0,0,.5); }
+.tarjeta-boxeador:hover .foto img { transform: scale(1.04); }
+
+/* Cartelera: efecto "cara a cara" */
+.combate { transition: background .25s; }
+.combate .esquina, .combate .vs { transition: transform .3s cubic-bezier(.2,.7,.2,1), color .3s; }
+.combate:hover { background: linear-gradient(90deg, rgba(230,6,19,.08), transparent 30%, transparent 70%, rgba(255,255,255,.05)); }
+.combate:hover .esquina-a { transform: translateX(10px); }
+.combate:hover .esquina-b { transform: translateX(-10px); }
+.combate:hover .vs { transform: scale(1.35); }
+
+/* Valores y beneficios */
+.valor { transition: border-color .25s; }
+.valor:hover { border-top-color: var(--blanco); }
+
+@media (prefers-reduced-motion: no-preference) {
+  /* Hero: la foto se acerca lentamente y se desplaza con el scroll (paralaje en sitio.js) */
+  .hero-foto { animation: hero-zoom 18s ease-out both; will-change: transform; }
+  @keyframes hero-zoom { from { scale: 1.12; } to { scale: 1; } }
+  .hero-bajada, .hero .botones, .hero-proximo { animation: entra .7s cubic-bezier(.2,.7,.2,1) both; }
+  .hero-bajada { animation-delay: .4s; }
+  .hero .botones { animation-delay: .5s; }
+  .hero-proximo { animation-delay: .6s; }
+
+  /* Aparición al hacer scroll: solo si sitio.js está activo (clase en <html>) */
+  .con-movimiento .revela { opacity: 0; transform: translateY(28px); transition: opacity .7s cubic-bezier(.2,.7,.2,1), transform .7s cubic-bezier(.2,.7,.2,1); transition-delay: var(--retardo, 0s); }
+  .con-movimiento .revela.visto { opacity: 1; transform: none; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .tarjeta-evento, .tarjeta-boxeador .foto, .combate .esquina, .combate .vs, .arriba, .cabecera .contenedor, .logo img { transition: none; }
+  .tarjeta-evento:hover, .tarjeta-boxeador:hover .foto, .combate:hover .esquina-a, .combate:hover .esquina-b, .combate:hover .vs { transform: none; }
+}

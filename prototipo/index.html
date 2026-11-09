@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/estilos.css?v=3">
+<link rel="stylesheet" href="css/estilos.css?v=4">
 </head>
 <body>
 
@@ -419,18 +419,39 @@
         <div class="beneficio"><strong>Por combate</strong><span>Asocia tu marca a una pelea o segmento destacado.</span></div>
       </div>
       <p class="texto-secundario" style="margin:0 0 16px">Marcas que han acompañado a Cobra <span class="estado estado-ejemplo" style="margin-left:8px">Lista y logos por confirmar</span></p>
-      <div class="sponsors">
-        <div class="sponsor">Kinedlife</div>
-        <div class="sponsor">Orangu Sport</div>
-        <div class="sponsor">RPM Chile</div>
-        <div class="sponsor">Pincheira Taller de Impresión</div>
-        <div class="sponsor">Agrosan</div>
-        <div class="sponsor">Transportes Pierattini</div>
-        <div class="sponsor">Olymphus</div>
-        <div class="sponsor">Everlast</div>
-        <div class="sponsor">Crest</div>
-        <div class="sponsor">100% Deportes</div>
-        <div class="sponsor">Smile</div>
+      <!-- Carrusel de sponsors: la lista se repite una vez para que el giro no tenga cortes -->
+      <div class="carrusel-bloque" data-carrusel>
+      <div class="carrusel-sponsors">
+        <div class="carrusel-pista">
+          <ul class="carrusel-lista" aria-label="Sponsors de Cobra Producciones">
+            <li>Kinedlife</li>
+            <li>Orangu Sport</li>
+            <li>RPM Chile</li>
+            <li>Pincheira Taller de Impresión</li>
+            <li>Agrosan</li>
+            <li>Transportes Pierattini</li>
+            <li>Olymphus</li>
+            <li>Everlast</li>
+            <li>Crest</li>
+            <li>100% Deportes</li>
+            <li>Smile</li>
+          </ul>
+          <ul class="carrusel-lista" aria-hidden="true">
+            <li>Kinedlife</li>
+            <li>Orangu Sport</li>
+            <li>RPM Chile</li>
+            <li>Pincheira Taller de Impresión</li>
+            <li>Agrosan</li>
+            <li>Transportes Pierattini</li>
+            <li>Olymphus</li>
+            <li>Everlast</li>
+            <li>Crest</li>
+            <li>100% Deportes</li>
+            <li>Smile</li>
+          </ul>
+        </div>
+      </div>
+        <button type="button" class="carrusel-pausa" aria-pressed="false" data-carrusel-pausa>Pausar</button>
       </div>
     </div>
   </section>
@@ -526,6 +547,6 @@
   <p class="contador"></p>
 </div>
 
-<script src="js/sitio.js?v=3"></script>
+<script src="js/sitio.js?v=4"></script>
 </body>
 </html>

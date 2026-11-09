@@ -10,7 +10,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=Work+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/estilos.css?v=3">
+<link rel="stylesheet" href="css/estilos.css?v=4">
 </head>
 <body>
 
@@ -96,13 +96,28 @@
         </div>
 
         <h2 class="subtitulo">Sponsors del evento</h2>
-        <div class="sponsors">
-          <div class="sponsor">Kinedlife</div>
-          <div class="sponsor">Agrosan</div>
-          <div class="sponsor">RPM Chile</div>
-          <div class="sponsor">Pincheira Taller de Impresión</div>
-          <div class="sponsor">Orangu Sport</div>
-          <div class="sponsor">Smile</div>
+        <div class="carrusel-bloque" data-carrusel>
+          <div class="carrusel-sponsors">
+            <div class="carrusel-pista">
+              <ul class="carrusel-lista" aria-label="Sponsors del evento">
+              <li>Kinedlife</li>
+              <li>Agrosan</li>
+              <li>RPM Chile</li>
+              <li>Pincheira Taller de Impresión</li>
+              <li>Orangu Sport</li>
+              <li>Smile</li>
+              </ul>
+              <ul class="carrusel-lista" aria-hidden="true">
+              <li>Kinedlife</li>
+              <li>Agrosan</li>
+              <li>RPM Chile</li>
+              <li>Pincheira Taller de Impresión</li>
+              <li>Orangu Sport</li>
+              <li>Smile</li>
+              </ul>
+            </div>
+          </div>
+          <button type="button" class="carrusel-pausa" aria-pressed="false" data-carrusel-pausa>Pausar</button>
         </div>
       </div>
 
@@ -187,6 +202,6 @@
   <p class="contador"></p>
 </div>
 
-<script src="js/sitio.js?v=3"></script>
+<script src="js/sitio.js?v=4"></script>
 </body>
 </html>

@@ -1,4 +1,4 @@
-// Cobra Producciones · prototipo v2
+// Cobra Producciones · prototipo v4
 (function () {
   'use strict';
 
@@ -145,5 +145,90 @@
     form.querySelectorAll('input, select, textarea').forEach(function (c) {
       c.addEventListener('input', function () { var campo = c.closest('.campo'); if (campo) campo.classList.remove('invalido'); });
     });
+  });
+})();
+
+// ======================================================================
+// v4 · Movimiento e interacciones
+// ======================================================================
+(function () {
+  'use strict';
+  var quieto = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  var raiz = document.documentElement;
+
+  // ---------- Carrusel de sponsors: botón Pausar / Reanudar ----------
+  document.querySelectorAll('[data-carrusel]').forEach(function (c) {
+    var b = c.querySelector('[data-carrusel-pausa]');
+    if (!b) return;
+    b.addEventListener('click', function () {
+      var pausado = c.classList.toggle('pausado');
+      b.setAttribute('aria-pressed', pausado ? 'true' : 'false');
+      b.textContent = pausado ? 'Reanudar' : 'Pausar';
+    });
+  });
+
+  // ---------- Barra de progreso y botón volver arriba ----------
+  var barra = document.createElement('div');
+  barra.className = 'progreso';
+  barra.setAttribute('aria-hidden', 'true');
+  document.body.appendChild(barra);
+
+  var arriba = document.createElement('button');
+  arriba.type = 'button';
+  arriba.className = 'arriba';
+  arriba.setAttribute('aria-label', 'Volver arriba');
+  arriba.innerHTML = '<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 5l-7 7 1.4 1.4L11 8.8V20h2V8.8l4.6 4.6L19 12z" fill="currentColor"/></svg>';
+  arriba.addEventListener('click', function () {
+    window.scrollTo({ top: 0, behavior: quieto ? 'auto' : 'smooth' });
+    var destino = document.querySelector('.logo');
+    if (destino) destino.focus({ preventScroll: true });
+  });
+  document.body.appendChild(arriba);
+
+  var cabecera = document.querySelector('.cabecera');
+  var heroFoto = document.querySelector('.hero-foto');
+  var pendiente = false;
+
+  function alDesplazar() {
+    pendiente = false;
+    var y = window.scrollY;
+    var alto = document.documentElement.scrollHeight - window.innerHeight;
+    barra.style.transform = 'scaleX(' + (alto > 0 ? Math.min(y / alto, 1) : 0) + ')';
+    if (cabecera) cabecera.classList.toggle('compacta', y > 80);
+    arriba.classList.toggle('visible', y > window.innerHeight * 0.9);
+    // Paralaje suave de la foto del hero (solo mientras se ve)
+    if (heroFoto && !quieto && y < window.innerHeight) heroFoto.style.transform = 'translateY(' + (y * 0.25) + 'px)';
+  }
+  window.addEventListener('scroll', function () {
+    if (!pendiente) { pendiente = true; window.requestAnimationFrame(alDesplazar); }
+  }, { passive: true });
+  alDesplazar();
+
+  // ---------- Aparición de contenidos al hacer scroll ----------
+  if (quieto || !('IntersectionObserver' in window)) return;
+  raiz.classList.add('con-movimiento');
+
+  var grupos = [
+    '.seccion-cabeza', '.destacado > *', '.cita-marca', '.intro-cobra',
+    '.grilla-eventos > *', '.valores > *', '.grilla-boxeadores > *', '.grilla-noticias > *',
+    '.beneficios > *', '.clinicas-grid > *', '.bloque-dividido > *', '.combate',
+    '.galeria > *', '.carrusel-bloque', '.contacto-grid > *', '.subtitulo', '.caja'
+  ];
+  var elementos = document.querySelectorAll(grupos.join(','));
+  var observador = new IntersectionObserver(function (entradas) {
+    entradas.forEach(function (e) {
+      if (!e.isIntersecting) return;
+      e.target.classList.add('visto');
+      observador.unobserve(e.target);
+    });
+  }, { rootMargin: '0px 0px -8% 0px', threshold: 0.12 });
+
+  elementos.forEach(function (el) {
+    if (el.closest('.hero')) return;
+    // Los hermanos de una misma grilla aparecen escalonados
+    var hermanos = el.parentElement ? Array.prototype.indexOf.call(el.parentElement.children, el) : 0;
+    el.style.setProperty('--retardo', Math.min(hermanos, 5) * 0.08 + 's');
+    el.classList.add('revela');
+    observador.observe(el);
   });
 })();
